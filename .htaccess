@@ -1,0 +1,11 @@
+<IfModule mod_rewrite.c>
+#Activar rewrite
+RewriteEngine on
+ErrorDocument 404 http://localhost/proyecto-tienda-camisetas/proyecto-php-poo-mvc/error/
+RewriteCond %{REQUEST_URI} !\.(css|gif|ico|jpg|js|png|swf|txt)$
+RewriteCond %(SCRIPT_FILENAME) !-d
+RewriteCond %(SCRIPT_FILENAME) !-f
+
+RewriteRule ^(.*)/(.*) index.php?controller=$1&action=$2
+
+</IfModule>
